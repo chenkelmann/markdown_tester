@@ -4,14 +4,6 @@ import actuarius.ActuariusTransformer
 import com.tristanhunt.knockoff.DefaultDiscounter
 import org.pegdown.PegDownProcessor
 
-/**
- * Created by IntelliJ IDEA.
- * User: chris
- * Date: Jan 5, 2011
- * Time: 1:09:06 PM
- * To change this template use File | Settings | File Templates.
- */
-
 class MarkdownTestCase (val title:String, val iterations:Int, val input:String) {
     def measure(f:(String => AnyRef)):(AnyRef, Long) = {
         var result:AnyRef = null
@@ -26,9 +18,9 @@ class MarkdownTestCase (val title:String, val iterations:Int, val input:String) 
         print("<td>" + millis1 + "</td>")
         val (result2, millis2) = measure(f)
         print("<td>" + millis2 + "</td>")
-        if (/*printOutput*/true) {
-            //println("Last output: ")
-            //println(result2.toString)
+        if (printOutput) {
+            println("Last output: ")
+            println(result2.toString)
         }
     }
 }
@@ -181,7 +173,7 @@ object RunSpeedTests {
         refLinkTestCase, blockQuoteTestCase, codeblockTestCase, listTestCase, allTestCase)
 
     def main(args:Array[String]) {
-        new MarkdownPerformance(testCases).run(false)    
+        new MarkdownPerformance(testCases).run(false)
     }
 
 }
