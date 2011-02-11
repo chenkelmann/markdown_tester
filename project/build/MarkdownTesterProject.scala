@@ -6,6 +6,10 @@ class MarkdownTesterProject(info: ProjectInfo) extends DefaultProject(info)
     
     val scalatest = "org.scalatest" % "scalatest" % "1.2" % "test->default" withSources()
     val junit = "junit" % "junit" % "4.5" % "test->default"
+    val asm = "asm" % "asm" % "3.3.1"
+    val asm_tree = "asm" % "asm-tree" % "3.3.1"
+    val asm_analysis = "asm" % "asm-analysis" % "3.3.1"
+    val asm_util = "asm" % "asm-util" % "3.3.1"
 
     val knockoff_repo = "t_repo" at "http://tristanhunt.com:8081/content/groups/public/"
     //this repo holds a dependency for knockoff
